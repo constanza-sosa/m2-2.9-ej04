@@ -74,7 +74,7 @@ function writeChecklist() {
     if (tasks[i].completed === true) {
       content += `
       <li class="list__item list__item${i} complete">
-      <label for="input[i]">
+      <label for="input${i}">
       <input
       class='input'
       id='input${i}'
@@ -91,7 +91,7 @@ function writeChecklist() {
     } else {
       content += `
       <li class="list__item list__item${i}">
-      <label for="input[i]">
+      <label for="input${i}">
       <input
       class='input'
       id='input${i}'
@@ -107,13 +107,17 @@ function writeChecklist() {
     }
     
     list.innerHTML = content;
-    paragraph.innerHTML = `Tienes ${total} tareas de las cuales ${complete} están hechas y ${pending} están pendientes`
+    paragraph.innerHTML = `Tienes ${total} tareas de las cuales ${complete} están hechas y ${pending} están pendientes`;
   }
 }
 writeChecklist();
 
 
-const inputs = document.querySelectorAll('.input');
+const inputsToSelect = document.querySelectorAll('.input');
+
+for (const item of inputsToSelect){
+  item.addEventListener('change', changeArray);
+}
 
 function changeArray(event) {
   const selected = event.currentTarget;
@@ -129,9 +133,6 @@ function changeArray(event) {
   console.log(tasks);
 }
 
-for (const item of inputs){
-  item.addEventListener('change', changeArray);
-}
 
   // for (let i = 0; i < inputs.length; i++) {
   //   inputs[i].addEventListener('change', changeArray);
