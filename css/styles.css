@@ -1,0 +1,28 @@
+/* CABECERA PAGINA: */
+*{ 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.link{
+  color: grey;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  border-bottom: 2px solid grey;
+  padding-bottom: 30px;
+  box-sizing: border-box; 
+}
+.text{
+  font-size: 30px;
+  display: none;
+}
+
+/* EJERCICIO: */
+
+.complete{
+  text-decoration: line-through;
+}
+
+.task__list{
+  list-style: none;
+  padding: 0;
+}
