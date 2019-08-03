@@ -109,20 +109,21 @@ function writeChecklist() {
     list.innerHTML = content;
     paragraph.innerHTML = `Tienes ${total} tareas de las cuales ${complete} están hechas y ${pending} están pendientes`;
   }
-}
-writeChecklist();
-
-
-const inputsToSelect = document.querySelectorAll('.input');
+  const inputsToSelect = document.querySelectorAll('.input');
 
 for (const item of inputsToSelect){
   item.addEventListener('change', changeArray);
 }
 
+}
+writeChecklist();
+
+
+
 function changeArray(event) {
   const selected = event.currentTarget;
   const z = selected.value;
-
+  
   if (selected.checked === true){
     tasks[z].completed = true;
     writeChecklist();
@@ -134,12 +135,18 @@ function changeArray(event) {
 }
 
 
-  // for (let i = 0; i < inputs.length; i++) {
+// for (let i = 0; i < inputs.length; i++) {
   //   inputs[i].addEventListener('change', changeArray);
   // }
-
-
-
+  
+  // const inputsToSelect = document.querySelectorAll('.input');
+  
+  // for (const item of inputsToSelect){
+  //   item.addEventListener('change', changeArray);
+  // }
+  
+  
+  
   
   // function lineChecklist(event) {
   //   const selected = event.currentTarget;
