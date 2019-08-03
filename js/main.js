@@ -122,9 +122,11 @@ function changeArray(event) {
   if (selected.checked === true){
     tasks[z].completed = true;
     writeChecklist();
+    // aquí vuelves a crear el contenido del UL y se pierden los listener porque con el innerHTML borras lo que habia y escribes de nuevo
   } else{
     tasks[z].completed = false;
     writeChecklist();
+    // aquí vuelves a crear el contenido del UL y se pierden los listener porque con el innerHTML borras lo que habia y escribes de nuevo
   }
   console.log(tasks);
 }
